@@ -9,6 +9,14 @@ from auth.login import login_user
 from session.websocket_listener import listen
 from utility.get_time import get_time
 
+async def JewKiller():
+
+    """
+    This function was named by .xdcraze16 on Discord.
+    """
+
+    
+
 async def main():
 
     """
