@@ -14,7 +14,6 @@ async def handle_event(event: dict):
     if event_type == "Ready":
         print(Fore.MAGENTA + f"[ {get_time()} ]" , Fore.GREEN + f"[ SYSTEM ] Connection ready: Initial state recieved.")
     elif event_type == "Message":
-        print(event)
         token = extract_token()
         author_id = event.get("author")
         author_username = resolve_username(author_id , token)

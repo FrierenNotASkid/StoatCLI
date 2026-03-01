@@ -6,10 +6,11 @@ from colorama import Fore
 
 from auth.auth_exists import *
 from auth.login import login_user
+from channels.select_channels import select_channel
 from session.websocket_listener import listen
 from utility.get_time import get_time
 
-async def JewKiller():
+async def user_input(token):
 
     """
     This function was named by .xdcraze16 on Discord.
@@ -20,7 +21,7 @@ async def JewKiller():
     while True: ## Message loop
         
         if current_channel == None:
-            pass
+            current_channel = select_channel(token)
 
 async def main():
 
@@ -52,7 +53,8 @@ async def main():
     websocket_url = websocket_url_partial + token
 
     await asyncio.gather(
-        listen(websocket_url)
+        listen(websocket_url),
+        user_input(token)
     )
 
 asyncio.run(main())
