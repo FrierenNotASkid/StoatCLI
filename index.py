@@ -15,7 +15,12 @@ async def JewKiller():
     This function was named by .xdcraze16 on Discord.
     """
 
-    
+    current_channel = None
+
+    while True: ## Message loop
+        
+        if current_channel == None:
+            pass
 
 async def main():
 

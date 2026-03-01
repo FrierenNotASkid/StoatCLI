@@ -1,7 +1,5 @@
 {
-    "servers" : [
+    "servers": [
 
-    ],
-    "current_guild" : null,
-    "current_channel" : null
+    ]
 }

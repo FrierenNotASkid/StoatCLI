@@ -4,7 +4,7 @@ from colorama import Fore
 
 from utility.get_time import get_time
 
-def fetch_username(user_id:str , token:str):
+def resolve_username(user_id:str , token:str):
 
     """
     Fetch a users username from their ID.
@@ -24,7 +24,7 @@ def fetch_username(user_id:str , token:str):
         username = j["username"]
         return username
     elif response.status_code == 401:
-        print(Fore.MAGENTA + f"[ {get_time()} ]" , Fore.RED + f"You are not logged authorised.")
+        print(Fore.MAGENTA + f"[ {get_time()} ]" , Fore.RED + f"You are not authorised.")
     else:
         print(Fore.MAGENTA + f"[ {get_time()} ]" , Fore.RED + f"A HTTP exception happened: " , response.status_code)
         return
