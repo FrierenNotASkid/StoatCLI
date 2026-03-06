@@ -2,6 +2,7 @@ from colorama import Fore
 
 from auth.auth_exists import extract_token
 from utility.get_time import get_time
+from utility.fetch_current_channel import current_channel
 from users.resolve_user import resolve_username
 
 async def handle_event(event: dict):
@@ -15,6 +16,7 @@ async def handle_event(event: dict):
         print(Fore.MAGENTA + f"[ {get_time()} ]" , Fore.GREEN + f"[ SYSTEM ] Connection ready: Initial state recieved.")
     elif event_type == "Message":
         token = extract_token()
+        print(event)
         author_id = event.get("author")
         author_username = resolve_username(author_id , token)
         content = event.get("content")

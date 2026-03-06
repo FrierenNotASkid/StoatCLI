@@ -9,6 +9,7 @@ from auth.login import login_user
 from channels.select_channels import select_channel
 from session.websocket_listener import listen
 from utility.get_time import get_time
+from utility.fetch_current_channel import set_current_channel
 
 async def user_input(token):
 
@@ -16,12 +17,13 @@ async def user_input(token):
     This function was named by .xdcraze16 on Discord.
     """
 
-    current_channel = None
-
     while True: ## Message loop
+
+        current_channel = None
         
-        if current_channel == None:
+        if current_channel is None:
             current_channel = select_channel(token)
+            set_current_channel(current_channel)
 
 async def main():
 
